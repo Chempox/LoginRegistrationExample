@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import Axios from 'axios';
 function Signup(){
-    //Declaration of database variables
+    //Declaration of state variables
     const [nameAcc,setNameAcc] = useState("");
     const [lastNameAcc,setLastNameAcc] = useState("");
     const [usernameAcc,setUsernameAcc] = useState("");
@@ -31,10 +31,6 @@ function Signup(){
     //The string must contain at least 1 numeric character
     //The string must be eight characters or longer
 
-    const imprime = ()=>{
-        console.log(nameAcc,lastNameAcc,usernameAcc,emailAcc,passwordAcc,confirmPasswordAcc)
-    }
-
     let validation = 0;
 
     const addUser = () =>{
@@ -48,6 +44,7 @@ function Signup(){
             console.log(response);
         });
     };
+
 
     const checkInputs = () => {
 
@@ -103,7 +100,7 @@ function Signup(){
         }
         if( validation === 7)
         {
-          imprime();
+          addUser();
           validation = 0;
         }
     }

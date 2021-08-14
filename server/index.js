@@ -5,7 +5,7 @@ const cors = require('cors');
 const { response } = require("express");
 const app = express();
 
-//Cors init
+//Cors & Express init
 app.use(cors());
 app.use(express.json());
 
@@ -35,6 +35,23 @@ app.post('/signup', (require,response) =>{
     }
     );
 });
+
+app.post('/login',(require,response) =>{
+    const username = require.body.username;
+    const password = require.body.password;
+    db.query('SELECT * FROM user WHERE username = ? AND password = ?',
+    [username,password],
+    (err, result) =>{
+        if (err) {
+            response.send({err: err});
+        }
+        if(result.length > 0) {
+            response.send(result);
+        } else{
+            response.send({message: "Wrong password or username"});
+        }
+    })
+})
 
 
 app.listen(3001, ()=> {
