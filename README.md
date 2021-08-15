@@ -4,7 +4,7 @@
 <h1>Login & Registration Example</h1>
 <h2>Introduction</h2>
 
-This application is an example of a registration and login system that I made with different dependencies of Node.JS. 
+This application is an example of a registration and login system that I made with different dependencies of Node.JS & React. 
 In it the user will be able to register with his data that will be later stored on the SQL server with the password encrypted. 
 Once register the user can login with his account and access the system.<br>
 Depependencies used in the front-end<br>
