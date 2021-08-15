@@ -5,6 +5,8 @@ import { useState } from 'react';
 import Axios from 'axios';
 import './Login.css';
 
+//Hashing working missing sessions
+
 function Login(){
     //Declaration of state variables
     const [username,setUsername] = useState("");
